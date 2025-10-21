@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -10,17 +9,17 @@
   <body>
     <!-- Skip link para accesibilidad -->
     <a
-      href="#main"
+      href="#app"
       class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-500 text-white px-4 py-2 rounded"
     >
       Saltar al contenido principal
     </a>
 
-    <!-- Navegación compartida -->
+    <!-- Navegación compartida (lista semántica) -->
     <nav
-      class="bg-gray-900 text-white sticky top-0 z-50"
+      class="fixed top-0 left-0 w-full bg-gray-900 text-white z-50"
       role="navigation"
-      aria-label="Navegación principal"
+      aria-label="Main navigation"
     >
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center py-4">
@@ -30,34 +29,67 @@
             aria-label="Inicio"
             >Portafolio</a
           >
-          <div class="space-x-6">
-            <a
-              href="#/"
-              class="hover:text-blue-400 transition-colors"
-              aria-current="page"
-              >Inicio</a
-            >
-            <a href="#/sobre" class="hover:text-blue-400 transition-colors"
-              >Sobre</a
-            >
-            <a href="#/proyectos" class="hover:text-blue-400 transition-colors"
-              >Proyectos</a
-            >
-            <a href="#/contacto" class="hover:text-blue-400 transition-colors"
-              >Contacto</a
-            >
-          </div>
+          <ul class="flex gap-6">
+            <li>
+              <a
+                href="#/"
+                class="hover:text-blue-400 transition-colors"
+                aria-current="page"
+                >Inicio</a
+              >
+            </li>
+            <li>
+              <a href="#/sobre" class="hover:text-blue-400 transition-colors"
+                >Sobre</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/proyectos"
+                class="hover:text-blue-400 transition-colors"
+                >Proyectos</a
+              >
+            </li>
+            <li>
+              <a href="#/contacto" class="hover:text-blue-400 transition-colors"
+                >Contacto</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/tipografia"
+                class="hover:text-blue-400 transition-colors"
+                >Tipografía</a
+              >
+            </li>
+            <li>
+              <a
+                href="#/componentes"
+                class="hover:text-blue-400 transition-colors"
+                >Componentes</a
+              >
+            </li>
+            <li>
+              <a href="#/layouts" class="hover:text-blue-400 transition-colors"
+                >Layouts</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Área de contenido principal -->
-    <main id="app" class="min-h-screen" role="main">
-      <!-- Las vistas se renderizarán aquí -->
+    <!-- Área de contenido principal: no fixed to allow scrolling. Añadimos padding
+         superior e inferior para que el contenido no quede oculto por la nav/footer fijas. -->
+    <main id="app" class="min-h-screen pt-20 pb-24" role="main">
+      <!-- Views will be rendered here -->
     </main>
 
     <!-- Footer compartido -->
-    <footer class="bg-gray-800 text-white py-8" role="contentinfo">
+    <footer
+      class="fixed bottom-0 left-0 w-full z-50 bg-gray-800 text-white py-8"
+      role="contentinfo"
+    >
       <div class="container mx-auto px-4 text-center">
         <p>
           &copy; 2025 Portafolio SPA. Construido con Tailwind & JavaScript

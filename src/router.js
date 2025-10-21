@@ -30,13 +30,15 @@ class SimpleRouter {
   }
 
   updateActiveNav(currentHash) {
-    // Remover aria-current de todos los enlaces de navegación
-    document.querySelectorAll("nav a").forEach((link) => {
+    // Solo considerar enlaces del router SPA que empiezan por "#/".
+    // Evita tocar anclas internas como "#app" (skip links, enlaces de sección).
+    document.querySelectorAll('nav a[href^="#/"]').forEach((link) => {
       link.removeAttribute("aria-current");
     });
 
-    // Añadir aria-current al enlace activo
-    const activeLink = document.querySelector(`nav a[href="${currentHash}"]`);
+    // currentHash es como "/", "/sobre", ...
+    // Construimos el selector completo como `#${currentHash}` para coincidir con hrefs (ej. href="#/sobre").
+    const activeLink = document.querySelector(`nav a[href="#${currentHash}"]`);
     if (activeLink) {
       activeLink.setAttribute("aria-current", "page");
     }
