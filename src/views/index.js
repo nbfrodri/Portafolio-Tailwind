@@ -22,4 +22,16 @@ export const views = {
     templateId: "view-layouts",
     templateUrl: "./src/views/layouts.html",
   },
+  "/buttons": {
+    templateId: "view-buttons",
+    templateUrl: "./src/views/buttons.html",
+  },
+  "/cards": {
+    templateId: "view-cards",
+    templateUrl: "./src/views/cards.html",
+  },
+  "/forms": {
+    templateId: "view-forms",
+    templateUrl: "./src/views/forms.html",
+  },
 };
